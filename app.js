@@ -6,6 +6,9 @@ const app = express();
 
 const PORT = config.get('port') || 5000;
 
+//Роут для авторизации
+app.use('/api/auth', require('./routes/auth.routes'));
+
 //Асинхронная функция отдает промисс по подключению к БД
 async function start() {
     try {
